@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Сайт реєстрації</title>
+        <link rel="stylesheet" href="css/form.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/additional-methods.js"></script>
+    </head>
+
+    <body>
+        <div class = "main_border">
+            <form action="index.html" method="POST" class="validate">
+                <h2 id="header">Форма реєстрації випускників:</h2><br>
+                <div id="info">
+                    <p>Ім'я</p>
+                    <input type="text" name="name" required><br><br>
+                    <p>Прізвище</p>
+                    <input type="text" name="surname" required><br><br>
+                    <p>Email</p>
+                    <input type="text" name="email" required pattern="[a-z0-9]+@[a-z]+\.[a-z]{2,4}$"><br><br>
+                    <p>Пароль</p>
+                    <input type="password" name="pass" required><br><br>
+                    <p>Стать</p>
+                    <input type="radio" name="sex" value="male">Чоловіча
+                    <input type="radio" name="sex" value="female">Жіноча
+                    <input type="radio" name="sex" value="empty">Не вказано
+                    <br><br>Вкажіть рік випуску:
+                    <select name="year">
+                        <option value="2007">2007</option>
+                        <option value="2008">2008</option>
+                        <option value="2009">2009</option>
+                        <option value="2010">2010</option>
+                    </select>
+                </div>
+                <p id="submit"><input name="submit" type="submit" value="Зберегти" id="submit_button"></p>
+            </form>
+        </div>
+        <div class="dialog">
+            <button onclick="document.getElementById('popup').style.display='block'" class="dialogbtn">Допомога</button>
+            <div id="popup">
+                <div id="dialog-content">
+                    <p>Пошта повинна мати формат: example123@gmail.com</p>
+                    <button id="close" onclick="document.getElementById('popup').style.display='none'">Закрити</button>
+                </div>
+            </div>
+        </div>
+        <script src="js/jqueryValidation.js"></script>
+        <script src="js/form.js"></script>
+    </body>
+</html>

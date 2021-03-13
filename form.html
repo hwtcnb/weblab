@@ -13,21 +13,20 @@
 
     <body>
         <div class = "main_border">
-            <form action="index.html" method="POST" class="validate">
+            <form action="index.html" method="POST" class="validate" novalidate>
                 <h2 id="header">Форма реєстрації випускників:</h2><br>
                 <div id="info">
                     <p>Ім'я</p>
-                    <input type="text" name="name" required><br><br>
+                    <input type="text" name="name"><br><br>
                     <p>Прізвище</p>
-                    <input type="text" name="surname" required><br><br>
+                    <input type="text" name="surname"><br><br>
                     <p>Email</p>
-                    <input type="text" name="email" required pattern="[a-z0-9]+@[a-z]+\.[a-z]{2,4}$"><br><br>
+                    <input type="text" name="email"><br><br>
                     <p>Пароль</p>
-                    <input type="password" name="pass" required><br><br>
+                    <input type="password" name="pass"><br><br>
                     <p>Стать</p>
                     <input type="radio" name="sex" value="male">Чоловіча
                     <input type="radio" name="sex" value="female">Жіноча
-                    <input type="radio" name="sex" value="empty">Не вказано
                     <br><br>Вкажіть рік випуску:
                     <select name="year">
                         <option value="2007">2007</option>
@@ -37,6 +36,7 @@
                     </select>
                 </div>
                 <p id="submit"><input name="submit" type="submit" value="Зберегти" id="submit_button"></p>
+                
             </form>
         </div>
         <div class="dialog">
@@ -48,7 +48,9 @@
                 </div>
             </div>
         </div>
+        <p id="check"><button id="check_button" onclick="jsValid()">Перевірка форми</button></p>
         <script src="js/jqueryValidation.js"></script>
         <script src="js/form.js"></script>
+        <script src="js/RegExpValidation.js"></script>
     </body>
 </html>

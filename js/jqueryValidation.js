@@ -13,7 +13,7 @@ $('.validate').validate({
             required: true
         },
         pass:{
-            required: 2,
+            required: true,
             minlength: 6
         }
     },

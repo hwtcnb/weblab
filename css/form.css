@@ -9,7 +9,6 @@ body{
     background:rgb(194, 192, 112);
     margin-left: 500px;
     margin-right: 500px;
-    margin-top: 50px;
     width: 510px;
     border: 2px solid black;
     border-radius: 25px;
@@ -50,7 +49,6 @@ select, input{
 
 .dialog{
     width: 43.41px;
-    margin-left: 16px;
     margin-right: 0px;
     border-radius: 25px;
 }
@@ -100,3 +98,24 @@ label{
 #close{
     margin-left: 150px;
 }
+
+#check_button{
+    height: 50px;
+    width: 100px;
+    font-size: medium; 
+    border: none; 
+    border-radius: 20px;
+}
+
+.dialogbtn{
+    height: 50px;
+    width: 100px;
+    font-size: medium; 
+    border: none; 
+    border-radius: 20px;
+}
+
+#check_button:hover{background-color:rgb(165, 165, 165) ;}
+#submit_button:hover{background-color: rgb(165, 165, 165);}
+#check_button:focus{outline: none;}
+#submit_button:focus{outline: none;}

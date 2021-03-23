@@ -2,6 +2,6 @@ function dplay(){
     $('#popup').css({'display':'block'});
 }
 
-setTimeout(dplay, 60000)
+setTimeout(dplay, 10000)
 
 

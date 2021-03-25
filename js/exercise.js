@@ -16,10 +16,7 @@ var Student = {
 }
 
 function exercise() {
-    text = prompt('Enter your text')
-    text = text.toLowerCase()
-    arr = text.split(' ')
-    console.log(arr)
+    arr = prompt('Enter your text').toLowerCase().split(' ')
     arr.sort()
     for (let index = 0; index < arr.length; index++) {
         document.writeln(arr[index])

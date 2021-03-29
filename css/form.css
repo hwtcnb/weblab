@@ -115,7 +115,7 @@ label{
     border-radius: 20px;
 }
 
-#check_button:hover{background-color:rgb(165, 165, 165) ;}
+/* #check_button:hover{background-color:rgb(165, 165, 165) ;} */
 #submit_button:hover{background-color: rgb(165, 165, 165);}
-#check_button:focus{outline: none;}
+/* #check_button:focus{outline: none;} */
 #submit_button:focus{outline: none;}

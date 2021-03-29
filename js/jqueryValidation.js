@@ -1,3 +1,40 @@
+
+function formJQuerySend(form){
+
+    const dataServer = document.createElement('p')
+    dataServer.classList.add('dataServer')
+    document.querySelector('.response-content').append(dataServer)
+
+
+    const formData = new FormData(form)
+
+    const data_obj = {}
+
+    formData.forEach((value, key) =>{
+        data_obj[key] = value
+    })
+
+    $.ajax({
+        url: `server.php`,
+        type: "POST", 
+        contentType: "application/json",
+        data: JSON.stringify(data_obj),
+        success: (data, textStatus) => {
+            if (textStatus === 'success') {
+                dataServer.innerHTML = data
+                // form.reset()
+            }
+        },
+        error: (jqXHR, textStatus, errorThrown) => {
+            console.log(textStatus)
+            console.log(errorThrown)
+            dataServer.innerHTML = 'Fail'
+        }
+    })
+}
+
+
+
 $('.validate').validate({
     rules: {
         name: {
@@ -35,5 +72,10 @@ $('.validate').validate({
             required: "Поле не повинно бути порожнім!",
             minlength: "Пароль має містити мінімум 6 символів!"
         }
+    },
+
+    submitHandler: function (form) {
+        formJQuerySend(form)
+        document.getElementById('response-popup').style.display = 'block'
     }
 })

@@ -54,7 +54,6 @@ select, input{
 }
 
 #dialog-content {
-    background-color: white;
     width: 400px;
     margin:40px auto 0px auto;
     border: none;
@@ -118,4 +117,4 @@ label{
 /* #check_button:hover{background-color:rgb(165, 165, 165) ;} */
 #submit_button:hover{background-color: rgb(165, 165, 165);}
 /* #check_button:focus{outline: none;} */
-#submit_button:focus{outline: none;}
+#submit_button:focus{outline: auto;}

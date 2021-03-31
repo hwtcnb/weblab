@@ -80,7 +80,7 @@ select, input{
 
 label{
     font-size: small;
-    margin-left: 10px;
+    margin-left: 20px;
 }
 
 #popup{
@@ -147,3 +147,9 @@ label{
     text-decoration: none;
     display: block;
 }
+
+span{
+    margin-left: 10px;
+}
+    
+

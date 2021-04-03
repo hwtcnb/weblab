@@ -1,10 +1,10 @@
 function formJSSend(form) {
     const dataServer = document.createElement('p')
-    // const serverStatus = document.createElement('p')
+    const serverStatus = document.createElement('p')
     dataServer.classList.add('dataServer')
-    // serverStatus.classList.add('serverStatus')
+    serverStatus.classList.add('serverStatus')
     document.querySelector('.response-content').append(dataServer)
-    // document.querySelect('.response-content').append(serverStatus)
+    document.querySelect('.response-content').append(serverStatus)
 
     const request = new XMLHttpRequest()
 
@@ -28,12 +28,13 @@ function formJSSend(form) {
           
         const data = JSON.parse(request.response)
         dataServer.innerHTML = data.name +' '+ data.surname +' '+ data.email +' '+ data.pass +' '+ data.sex +' '+ data.year
-        //   serverStatus.textContent = request.status
+        serverStatus.textContent = request.status
           form.reset()
           setTimeout(() => {
             dataServer.innerHTML = ''
+            serverStatus.textContent = ''
             document.getElementById('response-popup').style.display = 'none'
-          }, 1000000)
+          }, 10000)
         } else {
           dataServer.innerHTML = 'Fail'
         }
@@ -67,17 +68,18 @@ function formJQuerySend(form){
     })
 
     $.ajax({
-        url: `server.php`,
+        url: '/',
         type: "POST", 
         contentType: "application/json",
         data: JSON.stringify(data_obj),
         success: (data, textStatus) => {
             if (textStatus === 'success') {
-                dataServer.innerHTML = data
+                dataServer.innerHTML = data.name +' '+ data.surname +' '+ data.email +' '+ data.pass +' '+ data.sex +' '+ data.year
                 serverStatus.textContent = messages.success
                 form.reset()
                 setTimeout(() => {
             dataServer.innerHTML = ''
+            serverStatus.textContent = ''
             document.getElementById('response-popup').style.display = 'none'
           }, 10000)
             }

@@ -25,7 +25,9 @@ function formJSSend(form) {
 
     request.addEventListener('load', () => {
         if (request.status === 200) {
-          dataServer.innerText = request.response
+          
+        const data = JSON.parse(request.response)
+        dataServer.innerHTML = data.name +' '+ data.surname +' '+ data.email +' '+ data.pass +' '+ data.sex +' '+ data.year
         //   serverStatus.textContent = request.status
           form.reset()
           setTimeout(() => {

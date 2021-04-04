@@ -8,7 +8,7 @@ function formJSSend(form) {
 
     const request = new XMLHttpRequest()
 
-    request.open('POST', '/', true)
+    request.open('POST', '/form', true)
     request.setRequestHeader('Content-Type', 'application/json; charset=utf-8')
     
     const formData = new FormData(form)
@@ -68,7 +68,7 @@ function formJQuerySend(form){
     })
 
     $.ajax({
-        url: '/',
+        url: '/form',
         type: "POST", 
         contentType: "application/json",
         data: JSON.stringify(data_obj),

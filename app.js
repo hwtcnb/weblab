@@ -8,17 +8,20 @@ const jsonParser = express.json();
 app.use(express.static(path.join(__dirname, 'public/css/')))
 app.use(express.static(path.join(__dirname, 'public/js/')))
 
-// создаем парсер для данных в формате json
+app.get("/",function(request, response){
+    response.sendFile(__dirname + "/public/html/index.html");
+
+})
 
   
-app.post("/",  jsonParser ,function (request, response) {
+app.post("/form",  jsonParser ,function (request, response) {
     console.log(request.body);
     if(!request.body) return response.sendStatus(400);
      
     response.json(request.body); // отправляем пришедший ответ обратно
 });
   
-app.get("/",function(request, response){
+app.get("/form",function(request, response){
       
     response.sendFile(__dirname + "/public/html/form.html");
 });
